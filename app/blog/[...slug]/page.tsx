@@ -1,5 +1,3 @@
-export default function Slug() {
-    return (
-        <div>post</div>
-    )
+export default function BlogSlug() {
+  return <div>slug</div>;
 }

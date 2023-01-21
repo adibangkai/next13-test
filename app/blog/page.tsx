@@ -1,5 +1,3 @@
-export default function Blog() {
-    return (
-        <div>home</div>
-    )
+export default function BlogPost() {
+  return <div>Blog</div>;
 }
