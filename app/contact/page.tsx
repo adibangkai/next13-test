@@ -1,3 +1,34 @@
+"use client";
+
+import React, { ChangeEvent, ChangeEventHandler, useState } from "react";
+
 export default function Contact() {
-  return <h1>contact</h1>;
+  const [email, setEmail] = useState("");
+  const handleSubmit = async (e: React.FormEvent<HTMLInputElement>) => {
+    e.preventDefault();
+
+    await fetch("/api/contact", {
+      method: "POST",
+      body: JSON.stringify({ email }),
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+    });
+    console.log("hey");
+  };
+
+  return (
+    <div>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="email"
+          required
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <button type="submit">submit</button>
+      </form>
+    </div>
+  );
 }

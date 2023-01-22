@@ -1,3 +1,3 @@
 export default function BlogSlug() {
-  return <div>slug</div>;
+  return <div>post hi</div>;
 }
